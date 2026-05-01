@@ -137,20 +137,20 @@ background-size: cover; background-attachment: fixed; display: flex; justify-con
 
 .confirm-btn { width: 100%; background: #25D366; color: white; padding: 15px; font-size: 1.1rem; border-radius: 8px; border: none; cursor: pointer; margin-top: 15px; font-weight: bold; }
 
-/* === MOBILE RESPONSIVE TWEAKS (NEW) === */
+/* === MOBILE RESPONSIVE TWEAKS === */
 @media (max-width: 768px) {
-.hero { flex-direction: column; text-align: center; gap: 20px; padding-top: 110px; }
-.hero-text { text-align: center; }
-.hero h1 { font-size: 2.8rem; }
-.header-logo span { font-size: 1.1rem; }
-.cup-image-container { width: 80%; max-width: 250px; }
-.info-card { width: 100%; max-width: 320px; }
-.menu-gallery h2, .review-section h2 { font-size: 2.2rem; }
-.floating-container { bottom: 15px; right: 15px; gap: 10px; }
-.float-btn { width: 50px; height: 50px; font-size: 1.4rem; }
-.modal-content { padding: 15px; }
-.menu-row h4 { font-size: 0.95rem; }
-.add-btn { padding: 6px 10px; font-size: 0.9rem; }
+  .hero { flex-direction: column; text-align: center; gap: 20px; padding-top: 110px; }
+  .hero-text { text-align: center; }
+  .hero h1 { font-size: 2.8rem; }
+  .header-logo span { font-size: 1.1rem; }
+  .cup-image-container { width: 80%; max-width: 250px; }
+  .info-card { width: 100%; max-width: 320px; }
+  .menu-gallery h2, .review-section h2 { font-size: 2.2rem; }
+  .floating-container { bottom: 15px; right: 15px; gap: 10px; }
+  .float-btn { width: 50px; height: 50px; font-size: 1.4rem; }
+  .modal-content { padding: 15px; }
+  .menu-row h4 { font-size: 0.95rem; }
+  .add-btn { padding: 6px 10px; font-size: 0.9rem; }
 }
 </style>
 </head>
@@ -321,8 +321,8 @@ background-size: cover; background-attachment: fixed; display: flex; justify-con
 </div>
 
 <script>
-// YAHAN AAPKI FORMSPREE ID LAGA DI GAYI HAI
-const FORMSPREE_URL = "Https://formspree.io/f/xwvykzkn";
+// YAHAN AAPKI NAYI FORMSPREE ID (xwvykzkn) LAGA DI GAYI HAI
+const FORMSPREE_URL = "https://formspree.io/f/xwvykzkn";
 
 function toggleDropdown() {
 document.getElementById("myDropdown").classList.toggle("show");
@@ -444,13 +444,12 @@ method: "POST",
 headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
 body: JSON.stringify(dataObj)
 }).then(response => {
-// YAHAN AAPKA CUSTOM MESSAGE ADD KIYA HAI
 if (type === 'Order') {
 btn.innerHTML = '<i class="fas fa-check"></i> Your order is on the way!';
 } else {
 btn.innerHTML = '<i class="fas fa-check"></i> Inquiry Sent Successfully!';
 }
-btn.style.background = "#28a745"; // Green success color
+btn.style.background = "#28a745"; 
 
 setTimeout(() => {
 if(type === 'Order') {
@@ -469,7 +468,7 @@ btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Inquiry';
 btn.style.background = "var(--gold)";
 }
 btn.disabled = false;
-}, 2000); // 2 second ka timer takay message parha ja sake
+}, 2000); 
 }).catch(error => {
 alert("Something went wrong. Please try again.");
 btn.innerText = type === 'Order' ? "Send Order Directly" : "Send Inquiry";
